@@ -33,5 +33,10 @@ def search_by_synopsis():
     return AnimeSearch.search_by_synopsis()
 
 
+@app.route('/', methods=['GET'])
+def default():
+    return AnimeSearch.default()
+
+
 if __name__ == '__main__':
     app.run(debug=True)

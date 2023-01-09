@@ -26,3 +26,9 @@ class AnimeSearch:
         rank = np.argsort(result)[::-1]
         list_synopsis = data['synopsis'].iloc[rank[:20]].to_json()
         return list_synopsis
+
+    @staticmethod
+    def default():
+        data = get_anime_data()
+        all_data = data.to_json()
+        return all_data
