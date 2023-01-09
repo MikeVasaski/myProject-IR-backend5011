@@ -17,3 +17,12 @@ class AnimeSearch:
         list_title = data['title'].iloc[rank[:20]].to_json()
         return list_title
 
+    @staticmethod
+    def search_by_synopsis():
+        data = get_anime_data()
+        synopsis = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/ani_synopsis.pkl', 'rb'))
+        query = request.get_json()['search']
+        result = synopsis.transform(query)
+        rank = np.argsort(result)[::-1]
+        list_synopsis = data['synopsis'].iloc[rank[:20]].to_json()
+        return list_synopsis

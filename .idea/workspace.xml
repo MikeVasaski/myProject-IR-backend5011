@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30d6ce41-ab69-40d7-8531-90ff2d7cd809" name="Changes" comment="remove .gitignore and .gitattributes" />
+    <list default="true" id="30d6ce41-ab69-40d7-8531-90ff2d7cd809" name="Changes" comment="remove .gitignore and .gitattributes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AnimeSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AnimeSearch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filesRemove.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +57,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\3rd-2nd\IR-project\myProject-IR-backend" />
       <recent name="D:\3rd-2nd\IR-project\myProject-IR-backend\resources" />
     </key>
   </component>
@@ -126,9 +132,6 @@
       <module name="myProject-IR-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -188,6 +191,7 @@
       <workItem from="1673269935519" duration="3965000" />
       <workItem from="1673274402133" duration="625000" />
       <workItem from="1673275112228" duration="315000" />
+      <workItem from="1673275432916" duration="1780000" />
     </task>
     <task id="LOCAL-00001" summary="add .gitignore">
       <created>1673198601834</created>

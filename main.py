@@ -23,14 +23,14 @@ def user_login():
     return UserController.login()
 
 
-@app.route('/searchByTile', methods=['POST'])
+@app.route('/searchByTitle', methods=['POST'])
 def search_by_title():
     return AnimeSearch.search_by_title()
 
 
-# @app.route('/searchByTitle', methods=['POST'])
-# def search_title():
-#     return AnimeSearch.search_by_title()
+@app.route('/searchBySynopsis', methods=['POST'])
+def search_by_synopsis():
+    return AnimeSearch.search_by_synopsis()
 
 
 if __name__ == '__main__':
