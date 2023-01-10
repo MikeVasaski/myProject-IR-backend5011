@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30d6ce41-ab69-40d7-8531-90ff2d7cd809" name="Changes" comment="remove .gitignore and .gitattributes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/AnimeSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AnimeSearch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/readFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/readFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
       <recent name="D:\3rd-2nd\IR-project\myProject-IR-backend\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.readFiles">
+  <component name="RunManager" selected="Python.main">
     <configuration name="AnimeSearch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="myProject-IR-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,7 +188,7 @@
       <workItem from="1673274402133" duration="625000" />
       <workItem from="1673275112228" duration="315000" />
       <workItem from="1673275432916" duration="5361000" />
-      <workItem from="1673322828087" duration="6548000" />
+      <workItem from="1673322828087" duration="11020000" />
     </task>
     <task id="LOCAL-00001" summary="add .gitignore">
       <created>1673198601834</created>
