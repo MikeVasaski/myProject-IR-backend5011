@@ -20,12 +20,12 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-anime = pickle.load(open('/resources/anime_data.pkl', 'rb'))
-title = pickle.load(open('/resources/ani_title.pkl', 'rb'))
-synopsis = pickle.load(open('/resources/ani_synopsis.pkl', 'rb'))
+anime = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime_data.pkl', 'rb'))
+title = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/ani_title.pkl', 'rb'))
+synopsis = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/ani_synopsis.pkl', 'rb'))
 
 spell = SpellChecker()
-spell.word_frequency.load_text('../resources/spelling_check.pkl')
+spell.word_frequency.load_text('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spelling_check.pkl')
 
 
 def check_spell(query):
