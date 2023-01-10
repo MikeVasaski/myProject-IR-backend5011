@@ -33,6 +33,11 @@ def search_by_synopsis():
     return AnimeSearch.search_by_synopsis()
 
 
+# @app.route('/favorite/{id}', methods=['GET'])
+# def add_favorite():
+#
+
+
 @app.route('/', methods=['GET'])
 def default():
     return AnimeSearch.default()
