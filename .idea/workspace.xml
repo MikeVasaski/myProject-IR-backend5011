@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30d6ce41-ab69-40d7-8531-90ff2d7cd809" name="Changes" comment="remove .gitignore and .gitattributes">
-      <change afterPath="$PROJECT_DIR$/src/prepreocess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/AnimeSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AnimeSearch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/ani_title.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ani_title.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/anime_data.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/anime_data.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/readFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/readFiles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +195,7 @@
       <workItem from="1673275112228" duration="315000" />
       <workItem from="1673275432916" duration="5361000" />
       <workItem from="1673322828087" duration="11020000" />
-      <workItem from="1673359780511" duration="11997000" />
+      <workItem from="1673359780511" duration="19087000" />
     </task>
     <task id="LOCAL-00001" summary="add .gitignore">
       <created>1673198601834</created>

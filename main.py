@@ -1,8 +1,9 @@
 import pickle
-
-from flask import Flask, request
+import string
+from spellchecker import SpellChecker
+from flask import Flask, request, make_response, jsonify
 from sqlalchemy_utils.functions import database_exists, create_database
-from controller.AnimeSearch import AnimeSearch
+from controller.AnimeSearch import query_scoring
 from controller.userController import UserController
 from model.database import db
 from flask_cors import CORS
@@ -23,28 +24,29 @@ anime = pickle.load(open('/resources/anime_data.pkl', 'rb'))
 title = pickle.load(open('/resources/ani_title.pkl', 'rb'))
 synopsis = pickle.load(open('/resources/ani_synopsis.pkl', 'rb'))
 
+spell = SpellChecker()
+spell.word_frequency.load_text('../resources/spelling_check.pkl')
+
+
+def check_spell(query):
+    spell_correctness = [spell.correction(w) for w in query.split()]
+    cor_word = spell_correctness[0]
+    return cor_word
+
 
 @app.route('/login', methods=['POST'])
 def user_login():
     return UserController.login()
 
 
-@app.route('/searchByTitle', methods=['POST'])
-def search_by_title():
-
-    return AnimeSearch.search_by_title()
-
-
-@app.route('/searchBySynopsis', methods=['POST'])
-def search_by_synopsis():
-    return AnimeSearch.search_by_synopsis()
-
-
 @app.route('/search', methods=['POST'])
 def add_favorite():
     query = request.get_json()['search']
-    score_t = title.transform(query)
-
+    query = query.lower().translate(str.maketrans('', '', string.punctuation))
+    query = check_spell(query)
+    res = query_scoring(query)
+    res = {'result': res, 'correction': query}
+    return make_response(jsonify(res), 200)
 
 # @app.route('/', methods=['GET'])
 # def default():
