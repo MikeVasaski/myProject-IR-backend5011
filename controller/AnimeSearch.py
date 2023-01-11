@@ -5,6 +5,8 @@ import pandas as pd
 anime = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime_data.pkl', 'rb'))
 title = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/ani_title.pkl', 'rb'))
 synopsis = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/ani_synopsis.pkl', 'rb'))
+rating = pickle.load(open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/rating_1000p.pkl', 'rb'))
+
 
 
 def query_scoring(query):
@@ -17,6 +19,7 @@ def query_scoring(query):
                        'type': list(anime['type']),
                        'genres': list(anime['genres']),
                        'score': list(anime['score']),
+                       'favorites': list(anime['favorites']),
                        'synopsis': list(anime['synopsis']),
                        'studios': list(anime['studios']),
                        'image': list(anime['images']),
@@ -24,5 +27,20 @@ def query_scoring(query):
                        }).nlargest(columns='bm25-score', n=20)
     tf['rank'] = tf['bm25-score'].rank(ascending=False)
     tf = tf.drop(columns='bm25-score', axis=1)
+    tf = tf.to_dict('record')
+    return tf
+
+
+def get_ani_list():
+    tf = pd.DataFrame({'mal_id': list(anime['mal_id']),
+                       'title': list(anime['title']),
+                       'type': list(anime['type']),
+                       'genres': list(anime['genres']),
+                       'score': list(anime['score']),
+                       'synopsis': list(anime['synopsis']),
+                       'studios': list(anime['studios']),
+                       'image': list(anime['images']),
+                       'url': list(anime['url'])
+                       })
     tf = tf.to_dict('record')
     return tf
