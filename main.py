@@ -2,7 +2,7 @@ import string
 from spellchecker import SpellChecker
 from flask import Flask, request, make_response, jsonify
 from sqlalchemy_utils.functions import database_exists, create_database
-from controller.AnimeSearch import query_scoring
+from controller.AnimeSearch import query_scoring, get_ani_list
 from controller.userController import UserController
 from model.database import db
 from flask_cors import CORS
@@ -46,9 +46,12 @@ def add_favorite():
     res = {'result': res, 'correction': corr_word, 'query': query}
     return make_response(jsonify(res), 200)
 
-@app.route('/', methods=['GET'])
-def get_all_anime():
 
+@app.route('/')
+def get_all_anime():
+    res = get_ani_list()
+    res = {'result': res}
+    return make_response(jsonify(res), 200)
 
 
 if __name__ == '__main__':

@@ -58,7 +58,7 @@ def make_user_feature(df):
 
 
 def preprocess(merged_df):
-    merged_df = make_anime_feature(merged_df)
+    # merged_df = make_anime_feature(merged_df)
     merged_df = make_user_feature(merged_df)
     return merged_df
 
@@ -100,7 +100,7 @@ def train_data(fit_train, fit_test, blindtest):
 
 
 def predict(user_df, top_k, anime, rating):
-    merged_df = anime.merge(rating, left_on='MAL_ID', right_on='anime_id', how='inner')
+    merged_df = anime.merge(rating, left_on='mal_id', right_on='anime_id', how='inner')
     merged_df = preprocess(merged_df)
     merged_df = merged_df.drop(['mal_id', 'genres'], axis=1)
 

@@ -93,7 +93,7 @@ def title_synopsis_pkl():
     bm25_syno.fit(synopsis)
     pickle.dump(bm25_syno, open('../resources/ani_synopsis.pkl', 'wb'))
 
-    # rating = pickle.dump(data['score'], open('../resources/ani_title.pkl', 'wb'))
+    # rating = pickle.dump(data['score'], open('../resources/rate.pkl', 'wb'))
 
 
 # if __name__ == '__main__':
