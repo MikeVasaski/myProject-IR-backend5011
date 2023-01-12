@@ -31,8 +31,21 @@ def query_scoring(query):
 
 
 def get_ani_list():
-    user_id = 14
-    user_df = rating.copy().loc[rating['user_id'] == user_id]
-    user_df = make_user_feature(user_df)
-    anime_rec = predict(user_df, 10, anime, rating)
-    return anime_rec
+    # user_id = 14
+    # user_df = rating.copy().loc[rating['user_id'] == user_id]
+    # user_df = make_user_feature(user_df)
+    # anime_rec = predict(user_df, 10, anime, rating)
+    bound = len(anime)
+    tf = pd.DataFrame({'mal_id': list(anime['mal_id']),
+                       'title': list(anime['title']),
+                       'type': list(anime['type']),
+                       'genres': list(anime['genres']),
+                       'score': list(anime['score']),
+                       'favorites': list(anime['favorites']),
+                       'synopsis': list(anime['synopsis']),
+                       'studios': list(anime['studios']),
+                       'image': list(anime['images']),
+                       'url': list(anime['url'])
+                       }).nlargest(columns='mal_id', n=bound)
+    tf = tf.to_dict('record')
+    return tf
