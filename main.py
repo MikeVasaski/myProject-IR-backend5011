@@ -34,6 +34,7 @@ def user_login():
     return UserController.login()
 
 
+
 @app.route('/search', methods=['POST'])
 def add_favorite():
     query = request.get_json()['search']
