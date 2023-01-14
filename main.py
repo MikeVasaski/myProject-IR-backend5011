@@ -63,6 +63,7 @@ def add_bookmark():
     uid = request.get_json()['uid']
     ani_id = request.get_json()['mal_id']
     res = Bookmark(uid, ani_id)
+    print(res)
     db.session.add(res)
     db.session.commit()
     return bookmark_schema.jsonify(res), 200

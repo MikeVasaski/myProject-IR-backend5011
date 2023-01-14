@@ -17,5 +17,5 @@ def create_user(*args, **kwargs):
 
 @event.listens_for(Bookmark.__table__, 'after_create')
 def create_bookmark(*args, **kwargs):
-    db.session.add(Bookmark(uid='1', ani_id='1'))
+    # db.session.add(Bookmark(uid='1', ani_id='1'))
     db.session.commit()

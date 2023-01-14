@@ -8,7 +8,7 @@ from .database import db, ma
 class Bookmark(db.Model):
     __tablename__ = 'bookmark'
     id = db.Column(db.Integer, primary_key=True)
-    uid = db.Column(db.Integer)
+    uid = db.Column(db.Integer,  db.ForeignKey('user.id'))
     ani_id = db.Column(db.Integer)
 
     def __init__(self, uid, ani_id):
