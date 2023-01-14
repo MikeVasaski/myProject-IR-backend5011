@@ -1,3 +1,4 @@
+import json
 import pickle
 from src.LTR import predict, make_user_feature
 import pandas as pd
@@ -53,8 +54,17 @@ def get_ani_list():
 
 def list_bookmark(book):
     res = []
+    score = []
     for i in book:
         temp = anime[anime['mal_id'] == i['ani_id']].to_dict('records')[0]
+        # score.append(temp['score'])
         res.append(temp)
+    res.sort(key=lambda i: i['score'], reverse=True)
+    # print(res)
+    # print(score)
+    # score.sort(reverse=True)
+    # print("after sorting")
+    # print(score)
 
+    # ranking
     return res
