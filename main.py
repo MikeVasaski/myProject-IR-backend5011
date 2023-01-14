@@ -62,7 +62,8 @@ def get_all_anime():
 def add_bookmark():
     uid = request.get_json()['uid']
     ani_id = request.get_json()['mal_id']
-    res = Bookmark(uid, ani_id)
+    score = request.get_json()['score']
+    res = Bookmark(uid, ani_id, score)
     # print(res)
     db.session.add(res)
     db.session.commit()
