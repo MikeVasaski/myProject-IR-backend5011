@@ -6,6 +6,7 @@ from controller.AnimeSearch import query_scoring, get_ani_list
 from controller.userController import UserController
 from model.database import db
 from flask_cors import CORS
+from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
@@ -34,7 +35,6 @@ def user_login():
     return UserController.login()
 
 
-
 @app.route('/search', methods=['POST'])
 def add_favorite():
     query = request.get_json()['search']
@@ -53,6 +53,12 @@ def get_all_anime():
     res = get_ani_list()
     res = {'result': res}
     return make_response(jsonify(res), 200)
+
+
+@app.route('/addBookmark', methods=['POST'])
+def add_bookmark():
+    uid = request.get_json()['uid']
+    ani_id = request.get_json()['mal_id']
 
 
 if __name__ == '__main__':

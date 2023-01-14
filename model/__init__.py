@@ -1,5 +1,7 @@
 import bcrypt
 from sqlalchemy import event
+
+from .bookmark import Bookmark
 from .user import User
 from .database import db
 
@@ -10,4 +12,10 @@ def create_user(*args, **kwargs):
         User(username='mike', password=bcrypt.hashpw('1234'.encode('utf-8'), bcrypt.gensalt(10)),
              email='mike@hotmail.com',
              bookmark=None, favorite=None))
+    db.session.commit()
+
+
+@event.listens_for(Bookmark.__table__, 'after_create')
+def create_bookmark(*args, **kwargs):
+    db.session.add(Bookmark(uid='1', ani_id='1'))
     db.session.commit()
