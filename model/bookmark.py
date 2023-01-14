@@ -2,7 +2,7 @@ import bcrypt
 import jwt
 from flask import jsonify, request
 import datetime
-from .database import db
+from .database import db, ma
 
 
 class Bookmark(db.Model):
@@ -22,3 +22,9 @@ class Bookmark(db.Model):
             'uid': self.uid,
             'ani_id': self.ani_id,
         }
+
+
+class BookmarkSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'uid', 'ani_id')
+

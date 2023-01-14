@@ -4,9 +4,9 @@ from flask import Flask, request, make_response, jsonify
 from sqlalchemy_utils.functions import database_exists, create_database
 from controller.AnimeSearch import query_scoring, get_ani_list
 from controller.userController import UserController
+from model.bookmark import BookmarkSchema, Bookmark
 from model.database import db
 from flask_cors import CORS
-from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
@@ -19,6 +19,9 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
+
+bookmark_schema = BookmarkSchema()
+bookmarks_schema = BookmarkSchema(many=True)
 
 spell = SpellChecker()
 spell.word_frequency.load_text('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spelling_check.pkl')
@@ -59,6 +62,10 @@ def get_all_anime():
 def add_bookmark():
     uid = request.get_json()['uid']
     ani_id = request.get_json()['mal_id']
+    res = Bookmark(uid, ani_id)
+    db.session.add(res)
+    db.session.commit()
+    return bookmark_schema.jsonify(res), 200
 
 
 if __name__ == '__main__':
