@@ -70,7 +70,7 @@ def add_bookmark():
     return bookmark_schema.jsonify(res), 200
 
 
-@app.route('/deleteBookmark', methods=['DELETE'])
+@app.route('/Bookmark', methods=['DELETE'])
 def remove_bookmark():
     uid = request.get_json()['uid']
     ani_id = request.get_json()['mal_id']
@@ -84,7 +84,7 @@ def remove_bookmark():
     return jsonify("delete"), 200
 
 
-@app.route('/getBookmark', methods=['GET'])
+@app.route('/Bookmark', methods=['GET'])
 def get_bookmark():
     uid = request.get_json()['uid']
     all_book = db.session.query(Bookmark).filter_by(uid=uid).all()
