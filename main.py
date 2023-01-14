@@ -2,7 +2,7 @@ import string
 from spellchecker import SpellChecker
 from flask import Flask, request, make_response, jsonify
 from sqlalchemy_utils.functions import database_exists, create_database
-from controller.AnimeSearch import query_scoring, get_ani_list
+from controller.AnimeSearch import query_scoring, get_ani_list, list_bookmark
 from controller.userController import UserController
 from model.bookmark import BookmarkSchema, Bookmark
 from model.database import db
@@ -70,11 +70,35 @@ def add_bookmark():
     return bookmark_schema.jsonify(res), 200
 
 
+@app.route('/deleteBookmark', methods=['DELETE'])
+def remove_bookmark():
+    uid = request.get_json()['uid']
+    ani_id = request.get_json()['mal_id']
+    # bmD = Bookmark.query.get(uid=uid, ani_id=ani_id)
+    # print(bmD)
+    # res = db.session.execute(db.select(Bookmark)).filter_by(uid=uid, ani_id=ani_id).first()
+    res = db.session.query(Bookmark).filter_by(uid=uid, ani_id=ani_id).first()
+    print(res)
+    db.session.delete(res)
+    db.session.commit()
+    return jsonify("delete"), 200
+
+
 @app.route('/getBookmark', methods=['GET'])
 def get_bookmark():
-    all_bookmarks = Bookmark.query.all()
-    results = bookmarks_schema.dump(all_bookmarks)
-    return jsonify(results), 200
+    uid = request.get_json()['uid']
+    all_book = db.session.query(Bookmark).filter_by(uid=uid).all()
+    user = Bookmark.serialize_list(all_book)
+    result = list_bookmark(user)
+    # all_bookmarks = Bookmark.query.all()
+    # results = bookmarks_schema.dump(all_bookmarks)
+    return jsonify({'result': result}), 200
+
+
+@app.route('/animeDetails/<id>?', methods=['GET'])
+def post_details(id):
+    ani_detail = Bookmark.quey.get(id)
+    return bookmark_schema.jsonify(ani_detail)
 
 
 if __name__ == '__main__':

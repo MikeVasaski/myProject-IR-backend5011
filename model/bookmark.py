@@ -26,6 +26,10 @@ class Bookmark(db.Model):
             'score': self.score,
         }
 
+    @staticmethod
+    def serialize_list(list):
+        return [m.serialize for m in list]
+
 
 class BookmarkSchema(ma.Schema):
     class Meta:

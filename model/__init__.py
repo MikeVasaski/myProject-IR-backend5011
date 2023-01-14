@@ -11,6 +11,9 @@ def create_user(*args, **kwargs):
     db.session.add(
         User(username='mike', password=bcrypt.hashpw('1234'.encode('utf-8'), bcrypt.gensalt(10)),
              email='mike@hotmail.com'))
+    db.session.add(
+        User(username='Vasaski', password=bcrypt.hashpw('5678'.encode('utf-8'), bcrypt.gensalt(10)),
+             email='vasaz@hotmail.com')),
     db.session.commit()
 
 

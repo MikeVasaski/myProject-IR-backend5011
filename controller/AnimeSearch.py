@@ -49,3 +49,12 @@ def get_ani_list():
                        }).nlargest(columns='mal_id', n=bound)
     tf = tf.to_dict('record')
     return tf
+
+
+def list_bookmark(book):
+    res = []
+    for i in book:
+        temp = anime[anime['mal_id'] == i['ani_id']].to_dict('records')[0]
+        res.append(temp)
+
+    return res
