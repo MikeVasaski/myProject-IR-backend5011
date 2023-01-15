@@ -68,17 +68,24 @@ def clean_json_data():
     cleaned_synopsis = json_f['synopsis'].apply(lambda x: x.lower() if x is not None else '')
     cleaned_synopsis = cleaned_synopsis.apply(lambda x: x.translate(str.maketrans('', '', string.punctuation + u'\xa0')))
     json_f['synopsis'] = cleaned_synopsis
-    new_feature = ['mal_id', 'url', 'images',
+    new_feature = ['mal_id', 'images',
                    'title', 'type', 'genres',
-                   'score', 'favorites', 'synopsis', 'studios']
+                   'score', 'scored_by', 'members',
+                   'favorites', 'synopsis', 'studios']
     json_f = json_f[new_feature]
+    cleaned = json_f['score']
+    cleaned = cleaned.replace(np.NAN, 0)
+    json_f['score'] = cleaned
+    cleaned = json_f['scored_by']
+    cleaned = cleaned.replace(np.NAN, 0)
+    json_f['scored_by'] = cleaned
 
-
+    # json_f.to_csv(r'D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime.csv', index=None)
     clean_df = json_f.dropna()
     pickle.dump(rating, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/rating_1000p.pkl', 'wb'))
-    pickle.dump(clean_df, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime_data.pkl', 'wb'))
-    pickle.dump(clean_df['title'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_title.pkl', 'wb'))
-    pickle.dump(clean_df['synopsis'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_synopsis.pkl', 'wb'))
+    pickle.dump(json_f, open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/anime_data.pkl', 'wb'))
+    pickle.dump(json_f['title'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_title.pkl', 'wb'))
+    pickle.dump(json_f['synopsis'], open('D:/3rd-2nd/IR-project/myProject-IR-backend/resources/spell_corr_synopsis.pkl', 'wb'))
 def title_synopsis_pkl():
     data = pickle.load(open('../resources/anime_data.pkl', 'rb'))
     title = data['title']
