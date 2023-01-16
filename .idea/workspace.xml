@@ -6,17 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30d6ce41-ab69-40d7-8531-90ff2d7cd809" name="Changes" comment="remove .gitignore and .gitattributes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/AnimeSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/AnimeSearch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ani_synopsis.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ani_synopsis.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ani_title.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ani_title.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/anime_data.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/anime_data.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rating_1000p.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/scoreRate.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spell_corr_synopsis.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/spell_corr_synopsis.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spell_corr_title.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/spell_corr_title.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/spelling_check.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/spelling_check.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/readFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/readFiles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LTR.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/LTR.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,19 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/3rd-2nd/IR-953481/py-code/module0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/3rd-2nd/IR-project/myProject-IR-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3rd-2nd\IR-project\myProject-IR-backend" />
@@ -159,6 +150,9 @@
       <module name="myProject-IR-backend" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -204,7 +198,10 @@
       <workItem from="1673529942105" duration="1045000" />
       <workItem from="1673691316520" duration="14084000" />
       <workItem from="1673718451139" duration="597000" />
-      <workItem from="1673763532344" duration="10445000" />
+      <workItem from="1673763532344" duration="23505000" />
+      <workItem from="1673801594398" duration="1333000" />
+      <workItem from="1673841734332" duration="1332000" />
+      <workItem from="1673848947968" duration="1783000" />
     </task>
     <task id="LOCAL-00001" summary="add .gitignore">
       <created>1673198601834</created>
